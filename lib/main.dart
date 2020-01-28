@@ -7,6 +7,7 @@ import 'package:widgets/futter_builder.dart';
 import 'package:widgets/opacity.dart';
 import 'package:widgets/page_view.dart';
 import 'package:widgets/safe_area.dart';
+import 'package:widgets/table.dart';
 import 'package:widgets/wrap.dart';
 
 void main() => runApp(MyApp());
@@ -21,6 +22,7 @@ class RoutesData {
   static const FadeTransition = '/fade transition';
   static const FloatingActionButton = '/floating action button';
   static const PageView = '/page view';
+  static const Table = '/table';
 
 }
 
@@ -34,6 +36,7 @@ var routesMap = {
   RoutesData.FadeTransition: () => WeekFadeTransition(),
   RoutesData.FloatingActionButton: () => WeekFloatingActionButton(),
   RoutesData.PageView: () => WeekPageView(),
+  RoutesData.Table: () => WeekTable(),
 
 };
 
