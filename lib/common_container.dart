@@ -11,13 +11,19 @@ class CommonContainer extends StatelessWidget {
     // TODO: implement build
     return Scaffold(
       body: child,
-      appBar:  title !=null ? AppBar(title: Text(title),) : null,
-      floatingActionButton: FloatingActionButton(
-        child: Text('back'),
-        onPressed: () {
-          Navigator.pop(context);
-        },
-      ),
+      appBar: title != null
+          ? AppBar(
+              title: Text(title),
+            )
+          : null,
+      floatingActionButton: (title == null)
+          ? FloatingActionButton(
+              child: Text('back'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            )
+          : null,
     );
   }
 }

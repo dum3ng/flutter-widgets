@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:widgets/animated_container.dart';
 import 'package:widgets/expanded.dart';
+import 'package:widgets/fade_transition.dart';
+import 'package:widgets/floating_action_button.dart';
 import 'package:widgets/futter_builder.dart';
 import 'package:widgets/opacity.dart';
 import 'package:widgets/safe_area.dart';
@@ -15,6 +17,8 @@ class RoutesData {
   static const AnimatedContainer = '/animated container';
   static const Opacity = '/opacity';
   static const FutureBuilder = '/future builder';
+  static const FadeTransition = '/fade transition';
+  static const FloatingActionButton = '/floating action button';
 
 }
 
@@ -25,6 +29,8 @@ var routesMap = {
   RoutesData.AnimatedContainer: () => WeekAnimatedContainer(),
   RoutesData.Opacity: () => WeekOpacity(),
   RoutesData.FutureBuilder: () => WeekFutureBuilder(),
+  RoutesData.FadeTransition: () => WeekFadeTransition(),
+  RoutesData.FloatingActionButton: () => WeekFloatingActionButton(),
 
 };
 
