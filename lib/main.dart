@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:widgets/animated_container.dart';
 import 'package:widgets/expanded.dart';
+import 'package:widgets/futter_builder.dart';
 import 'package:widgets/opacity.dart';
 import 'package:widgets/safe_area.dart';
 import 'package:widgets/wrap.dart';
@@ -13,6 +14,8 @@ class RoutesData {
   static const Wrap = '/wrap';
   static const AnimatedContainer = '/animated container';
   static const Opacity = '/opacity';
+  static const FutureBuilder = '/future builder';
+
 }
 
 var routesMap = {
@@ -21,6 +24,7 @@ var routesMap = {
   RoutesData.Wrap: () => WeekWrap(),
   RoutesData.AnimatedContainer: () => WeekAnimatedContainer(),
   RoutesData.Opacity: () => WeekOpacity(),
+  RoutesData.FutureBuilder: () => WeekFutureBuilder(),
 
 };
 
