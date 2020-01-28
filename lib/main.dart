@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widgets/animated_container.dart';
 import 'package:widgets/expanded.dart';
 import 'package:widgets/safe_area.dart';
 import 'package:widgets/wrap.dart';
@@ -9,12 +10,14 @@ class RoutesData {
   static final SafeArea = '/safe area';
   static final Expanded = '/expanded';
   static final Wrap = '/wrap';
+  static final AnimatedContainer = '/animated container';
 }
 
 var routesMap = {
   RoutesData.SafeArea: () => WeekSafeArea(),
   RoutesData.Expanded: () => WeekExpanded(),
   RoutesData.Wrap: () => WeekWrap(),
+  RoutesData.AnimatedContainer: () => WeekAnimatedContainer(),
 
 };
 
