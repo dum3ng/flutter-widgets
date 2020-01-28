@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:widgets/expanded.dart';
 import 'package:widgets/safe_area.dart';
+import 'package:widgets/wrap.dart';
 
 void main() => runApp(MyApp());
 
 class RoutesData {
   static final SafeArea = '/safe area';
   static final Expanded = '/expanded';
+  static final Wrap = '/wrap';
 }
 
 var routesMap = {
   RoutesData.SafeArea: () => WeekSafeArea(),
   RoutesData.Expanded: () => WeekExpanded(),
+  RoutesData.Wrap: () => WeekWrap(),
+
 };
 
 class MyApp extends StatelessWidget {
