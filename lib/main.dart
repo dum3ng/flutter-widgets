@@ -7,6 +7,7 @@ import 'package:widgets/futter_builder.dart';
 import 'package:widgets/opacity.dart';
 import 'package:widgets/page_view.dart';
 import 'package:widgets/safe_area.dart';
+import 'package:widgets/sliver_app_bar.dart';
 import 'package:widgets/table.dart';
 import 'package:widgets/wrap.dart';
 
@@ -23,6 +24,7 @@ class RoutesData {
   static const FloatingActionButton = '/floating action button';
   static const PageView = '/page view';
   static const Table = '/table';
+  static const SliverAppBar = '/sliver app bar';
 
 }
 
@@ -37,6 +39,7 @@ var routesMap = {
   RoutesData.FloatingActionButton: () => WeekFloatingActionButton(),
   RoutesData.PageView: () => WeekPageView(),
   RoutesData.Table: () => WeekTable(),
+  RoutesData.SliverAppBar: () => WeekSliverAppBar(),
 
 };
 
