@@ -5,6 +5,7 @@ import 'package:widgets/fade_transition.dart';
 import 'package:widgets/floating_action_button.dart';
 import 'package:widgets/futter_builder.dart';
 import 'package:widgets/opacity.dart';
+import 'package:widgets/page_view.dart';
 import 'package:widgets/safe_area.dart';
 import 'package:widgets/wrap.dart';
 
@@ -19,6 +20,7 @@ class RoutesData {
   static const FutureBuilder = '/future builder';
   static const FadeTransition = '/fade transition';
   static const FloatingActionButton = '/floating action button';
+  static const PageView = '/page view';
 
 }
 
@@ -31,6 +33,7 @@ var routesMap = {
   RoutesData.FutureBuilder: () => WeekFutureBuilder(),
   RoutesData.FadeTransition: () => WeekFadeTransition(),
   RoutesData.FloatingActionButton: () => WeekFloatingActionButton(),
+  RoutesData.PageView: () => WeekPageView(),
 
 };
 

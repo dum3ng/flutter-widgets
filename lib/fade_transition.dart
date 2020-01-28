@@ -15,10 +15,10 @@ class _WeekFadeTransitionState extends State<WeekFadeTransition>
   @override
   void initState() {
     // TODO: implement initState
+    super.initState();
     _animationController =
         AnimationController(vsync: this, duration: Duration(seconds: 2));
     _animation = Tween(begin: 0.0, end: 1.0).animate(_animationController);
-    super.initState();
   }
 
   @override
