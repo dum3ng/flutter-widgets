@@ -13,6 +13,7 @@ import 'package:widgets/sliver_app_bar.dart';
 import 'package:widgets/sliver_collection.dart';
 import 'package:widgets/stream_builder.dart';
 import 'package:widgets/table.dart';
+import 'package:widgets/tooltip.dart';
 import 'package:widgets/wrap.dart';
 
 void main() => runApp(MyApp());
@@ -49,6 +50,9 @@ class RoutesData {
 
   /// 19
   static const CustomPaint = '/custom paint';
+  /// 20
+  static const Tooltip = '/tooltip';
+
 }
 
 var routesMap = {
@@ -67,6 +71,7 @@ var routesMap = {
   RoutesData.FadeInImage: () => WeekFadeInImage(),
   RoutesData.StreamBuilder: () => WeekStreamBuilder(),
   RoutesData.CustomPaint: () => WeekCustomPaint(),
+  RoutesData.Tooltip: () => WeekTooltip(),
 
 };
 

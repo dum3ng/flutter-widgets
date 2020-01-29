@@ -59,10 +59,8 @@ class WeekSliverCollection extends StatelessWidget {
 //              )),
             ));
   }
-
   Widget demoSliverList() {
     return CustomScrollView(
-      key: PageStorageKey(2),
       slivers: <Widget>[
         SliverList(
           delegate: SliverChildListDelegate(List.generate(20, (index) => index)
