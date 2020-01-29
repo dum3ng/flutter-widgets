@@ -4,6 +4,7 @@ import 'package:widgets/custom_paint.dart';
 import 'package:widgets/expanded.dart';
 import 'package:widgets/fade_in_image.dart';
 import 'package:widgets/fade_transition.dart';
+import 'package:widgets/fitted_box.dart';
 import 'package:widgets/floating_action_button.dart';
 import 'package:widgets/futter_builder.dart';
 import 'package:widgets/opacity.dart';
@@ -52,6 +53,8 @@ class RoutesData {
   static const CustomPaint = '/custom paint';
   /// 20
   static const Tooltip = '/tooltip';
+  /// 21
+  static const FittedBox = '/fitted box';
 
 }
 
@@ -72,6 +75,7 @@ var routesMap = {
   RoutesData.StreamBuilder: () => WeekStreamBuilder(),
   RoutesData.CustomPaint: () => WeekCustomPaint(),
   RoutesData.Tooltip: () => WeekTooltip(),
+  RoutesData.FittedBox: () => WeekFittedBox(),
 
 };
 
