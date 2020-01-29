@@ -7,6 +7,7 @@ import 'package:widgets/fade_transition.dart';
 import 'package:widgets/fitted_box.dart';
 import 'package:widgets/floating_action_button.dart';
 import 'package:widgets/futter_builder.dart';
+import 'package:widgets/layout_builder.dart';
 import 'package:widgets/opacity.dart';
 import 'package:widgets/page_view.dart';
 import 'package:widgets/safe_area.dart';
@@ -21,41 +22,58 @@ void main() => runApp(MyApp());
 
 class RoutesData {
   /// 0
-  static  const SafeArea = '/safe area';
+  static const SafeArea = '/safe area';
+
   /// 1
   static const Expanded = '/expanded';
+
   /// 2
   static const Wrap = '/wrap';
+
   /// 3
   static const AnimatedContainer = '/animated container';
+
   /// 4
   static const Opacity = '/opacity';
+
   /// 5
   static const FutureBuilder = '/future builder';
+
   /// 6
   static const FadeTransition = '/fade transition';
+
   /// 7
   static const FloatingActionButton = '/floating action button';
+
   /// 8
   static const PageView = '/page view';
+
   /// 9
   static const Table = '/table';
+
   /// 10
   static const SliverAppBar = '/sliver app bar';
+
   /// 11
   static const SliverCollection = '/sliver list & sliver grid';
+
   /// 12
   static const FadeInImage = '/fade in image';
+
   /// 13
   static const StreamBuilder = '/stream builder';
 
   /// 19
   static const CustomPaint = '/custom paint';
+
   /// 20
   static const Tooltip = '/tooltip';
+
   /// 21
   static const FittedBox = '/fitted box';
 
+  /// 22
+  static const LayoutBuilder = '/layout builder';
 }
 
 var routesMap = {
@@ -76,7 +94,7 @@ var routesMap = {
   RoutesData.CustomPaint: () => WeekCustomPaint(),
   RoutesData.Tooltip: () => WeekTooltip(),
   RoutesData.FittedBox: () => WeekFittedBox(),
-
+  RoutesData.LayoutBuilder: () => WeekLayoutBuilder(),
 };
 
 class MyApp extends StatelessWidget {
@@ -154,7 +172,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //      {
 //        RoutesData.SafeArea: (context) => WeekSafeArea(),
 //      },
-      home: weeklyList(context),
+      home: weeklyGrid(),
     );
   }
 
@@ -165,7 +183,8 @@ class _MyHomePageState extends State<MyHomePage> {
           itemBuilder: (context, index) {
             var key = routesMap.keys.toList()[index];
             var value = routesMap[key];
-            return ListTile(title: Text(key),
+            return ListTile(
+                title: Text(key),
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return value();
@@ -173,5 +192,25 @@ class _MyHomePageState extends State<MyHomePage> {
                 });
           }),
     );
+  }
+
+  Widget weeklyGrid() {
+    return Scaffold(
+        body: GridView.builder(
+            itemCount: routesMap.length,
+            gridDelegate:
+                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+            itemBuilder: (context, index) {
+              var key = routesMap.keys.toList()[index];
+              var value = routesMap[key];
+              return ListTile(
+                  title: Text(key),
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return value();
+                    }));
+                  });
+            }));
   }
 }
