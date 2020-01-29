@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgets/animated_container.dart';
+import 'package:widgets/custom_paint.dart';
 import 'package:widgets/expanded.dart';
 import 'package:widgets/fade_in_image.dart';
 import 'package:widgets/fade_transition.dart';
@@ -17,21 +18,37 @@ import 'package:widgets/wrap.dart';
 void main() => runApp(MyApp());
 
 class RoutesData {
+  /// 0
   static  const SafeArea = '/safe area';
+  /// 1
   static const Expanded = '/expanded';
+  /// 2
   static const Wrap = '/wrap';
+  /// 3
   static const AnimatedContainer = '/animated container';
+  /// 4
   static const Opacity = '/opacity';
+  /// 5
   static const FutureBuilder = '/future builder';
+  /// 6
   static const FadeTransition = '/fade transition';
+  /// 7
   static const FloatingActionButton = '/floating action button';
+  /// 8
   static const PageView = '/page view';
+  /// 9
   static const Table = '/table';
+  /// 10
   static const SliverAppBar = '/sliver app bar';
+  /// 11
   static const SliverCollection = '/sliver list & sliver grid';
+  /// 12
   static const FadeInImage = '/fade in image';
+  /// 13
   static const StreamBuilder = '/stream builder';
 
+  /// 19
+  static const CustomPaint = '/custom paint';
 }
 
 var routesMap = {
@@ -49,6 +66,7 @@ var routesMap = {
   RoutesData.SliverCollection: () => WeekSliverCollection(),
   RoutesData.FadeInImage: () => WeekFadeInImage(),
   RoutesData.StreamBuilder: () => WeekStreamBuilder(),
+  RoutesData.CustomPaint: () => WeekCustomPaint(),
 
 };
 

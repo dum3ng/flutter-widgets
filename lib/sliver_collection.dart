@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:widgets/common_container.dart';
+import 'package:widgets/utils/color.dart';
 
 class WeekSliverCollection extends StatelessWidget {
   @override
@@ -99,9 +100,6 @@ class WeekSliverCollection extends StatelessWidget {
   }
 }
 
-Color getRandomColor() {
-  return Color(Random().nextInt(0xffffffff));
-}
 
 Widget createListTile(String text) {
   return Container(
