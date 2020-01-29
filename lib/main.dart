@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:widgets/animated_container.dart';
 import 'package:widgets/expanded.dart';
+import 'package:widgets/fade_in_image.dart';
 import 'package:widgets/fade_transition.dart';
 import 'package:widgets/floating_action_button.dart';
 import 'package:widgets/futter_builder.dart';
@@ -27,6 +28,7 @@ class RoutesData {
   static const Table = '/table';
   static const SliverAppBar = '/sliver app bar';
   static const SliverCollection = '/sliver list & sliver grid';
+  static const FadeInImage = '/fade in image';
 
 }
 
@@ -43,6 +45,7 @@ var routesMap = {
   RoutesData.Table: () => WeekTable(),
   RoutesData.SliverAppBar: () => WeekSliverAppBar(),
   RoutesData.SliverCollection: () => WeekSliverCollection(),
+  RoutesData.FadeInImage: () => WeekFadeInImage(),
 
 };
 
