@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgets/absorb_pointer.dart';
+import 'package:widgets/align.dart';
 import 'package:widgets/animated_container.dart';
 import 'package:widgets/backdrop_filter.dart';
 import 'package:widgets/custom_paint.dart';
@@ -84,6 +85,8 @@ class RoutesData {
   static const Transform = '/transform';
   /// 25
   static const BackdropFilter = '/backdrop filter';
+  /// 26
+  static const Align = '/align';
 }
 
 var routesMap = {
@@ -108,6 +111,7 @@ var routesMap = {
   RoutesData.AbsorbPointer: () => WeekAbsorbPointer(),
   RoutesData.Transform: () => WeekTransform(),
   RoutesData.BackdropFilter: () => WeekBackdropFilter(),
+  RoutesData.Align: () => WeekAlign(),
 };
 
 class MyApp extends StatelessWidget {
