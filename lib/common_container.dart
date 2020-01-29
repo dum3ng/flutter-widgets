@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 class CommonContainer extends StatelessWidget {
   final child;
   final title;
+  final GlobalKey key;
 
-  CommonContainer({this.child, this.title});
+  CommonContainer({this.key, this.child, this.title});
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      key: key,
       body: child,
       appBar: title != null
           ? AppBar(

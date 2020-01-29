@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widgets/absorb_pointer.dart';
 import 'package:widgets/animated_container.dart';
 import 'package:widgets/custom_paint.dart';
 import 'package:widgets/expanded.dart';
@@ -74,6 +75,9 @@ class RoutesData {
 
   /// 22
   static const LayoutBuilder = '/layout builder';
+
+  /// 23
+  static const AbsorbPointer = '/absorb pointer';
 }
 
 var routesMap = {
@@ -95,6 +99,7 @@ var routesMap = {
   RoutesData.Tooltip: () => WeekTooltip(),
   RoutesData.FittedBox: () => WeekFittedBox(),
   RoutesData.LayoutBuilder: () => WeekLayoutBuilder(),
+  RoutesData.AbsorbPointer: () => WeekAbsorbPointer(),
 };
 
 class MyApp extends StatelessWidget {
