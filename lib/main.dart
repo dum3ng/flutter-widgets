@@ -8,6 +8,7 @@ import 'package:widgets/opacity.dart';
 import 'package:widgets/page_view.dart';
 import 'package:widgets/safe_area.dart';
 import 'package:widgets/sliver_app_bar.dart';
+import 'package:widgets/sliver_collection.dart';
 import 'package:widgets/table.dart';
 import 'package:widgets/wrap.dart';
 
@@ -25,6 +26,7 @@ class RoutesData {
   static const PageView = '/page view';
   static const Table = '/table';
   static const SliverAppBar = '/sliver app bar';
+  static const SliverCollection = '/sliver list & sliver grid';
 
 }
 
@@ -40,6 +42,7 @@ var routesMap = {
   RoutesData.PageView: () => WeekPageView(),
   RoutesData.Table: () => WeekTable(),
   RoutesData.SliverAppBar: () => WeekSliverAppBar(),
+  RoutesData.SliverCollection: () => WeekSliverCollection(),
 
 };
 
