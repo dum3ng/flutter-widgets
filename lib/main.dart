@@ -10,6 +10,7 @@ import 'package:widgets/page_view.dart';
 import 'package:widgets/safe_area.dart';
 import 'package:widgets/sliver_app_bar.dart';
 import 'package:widgets/sliver_collection.dart';
+import 'package:widgets/stream_builder.dart';
 import 'package:widgets/table.dart';
 import 'package:widgets/wrap.dart';
 
@@ -29,6 +30,7 @@ class RoutesData {
   static const SliverAppBar = '/sliver app bar';
   static const SliverCollection = '/sliver list & sliver grid';
   static const FadeInImage = '/fade in image';
+  static const StreamBuilder = '/stream builder';
 
 }
 
@@ -46,6 +48,7 @@ var routesMap = {
   RoutesData.SliverAppBar: () => WeekSliverAppBar(),
   RoutesData.SliverCollection: () => WeekSliverCollection(),
   RoutesData.FadeInImage: () => WeekFadeInImage(),
+  RoutesData.StreamBuilder: () => WeekStreamBuilder(),
 
 };
 
