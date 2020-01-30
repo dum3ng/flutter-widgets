@@ -24,6 +24,7 @@ import 'package:widgets/stream_builder.dart';
 import 'package:widgets/table.dart';
 import 'package:widgets/tooltip.dart';
 import 'package:widgets/transform.dart';
+import 'package:widgets/value_listenable_builder.dart';
 import 'package:widgets/wrap.dart';
 
 void main() => runApp(MyApp());
@@ -85,20 +86,30 @@ class RoutesData {
 
   /// 23
   static const AbsorbPointer = '/absorb pointer';
+
   /// 24
   static const Transform = '/transform';
+
   /// 25
   static const BackdropFilter = '/backdrop filter';
+
   /// 26
   static const Align = '/align';
+
   /// 27
   static const Positioned = '/positioned';
+
   /// 28
   static const AnimatedBuilder = '/animated builder';
+
   /// 29
   static const Dismissible = '/dismissible';
+
   /// 30
   static const SizedBox = '/sized box';
+
+  /// 31
+  static const ValueListenableBuilder = '/value listenable builder';
 }
 
 var routesMap = {
@@ -128,6 +139,7 @@ var routesMap = {
   RoutesData.AnimatedBuilder: () => WeekAnimatedBuilder(),
   RoutesData.Dismissible: () => WeekDismissible(),
   RoutesData.SizedBox: () => WeekSizedBox(),
+  RoutesData.ValueListenableBuilder: () => WeekValueListenableBuilder(),
 };
 
 class MyApp extends StatelessWidget {
