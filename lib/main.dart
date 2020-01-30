@@ -23,6 +23,7 @@ import 'package:widgets/safe_area.dart';
 import 'package:widgets/sized_box.dart';
 import 'package:widgets/sliver_app_bar.dart';
 import 'package:widgets/sliver_collection.dart';
+import 'package:widgets/spacer.dart';
 import 'package:widgets/stream_builder.dart';
 import 'package:widgets/table.dart';
 import 'package:widgets/tooltip.dart';
@@ -124,6 +125,8 @@ class RoutesData {
   static const Flexible = '/flexible';
   /// 35
   static const MediaQuery = '/media query';
+  /// 36
+  static const Spacer = '/spacer';
 }
 
 var routesMap = {
@@ -158,6 +161,7 @@ var routesMap = {
   RoutesData.AnimatedList: () => WeekAnimatedList(),
   RoutesData.Flexible: () => WeekFlexible(),
   RoutesData.MediaQuery: () => WeekMediaQuery(),
+  RoutesData.Spacer: () => WeekSpacer(),
 };
 
 class MyApp extends StatelessWidget {
