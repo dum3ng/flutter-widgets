@@ -15,6 +15,7 @@ import 'package:widgets/flexible.dart';
 import 'package:widgets/floating_action_button.dart';
 import 'package:widgets/futter_builder.dart';
 import 'package:widgets/layout_builder.dart';
+import 'package:widgets/media_query.dart';
 import 'package:widgets/opacity.dart';
 import 'package:widgets/page_view.dart';
 import 'package:widgets/positioned.dart';
@@ -121,6 +122,8 @@ class RoutesData {
   static const AnimatedList = '/animated list';
   /// 34
   static const Flexible = '/flexible';
+  /// 35
+  static const MediaQuery = '/media query';
 }
 
 var routesMap = {
@@ -154,6 +157,7 @@ var routesMap = {
   RoutesData.Draggable: () => WeekDraggable(),
   RoutesData.AnimatedList: () => WeekAnimatedList(),
   RoutesData.Flexible: () => WeekFlexible(),
+  RoutesData.MediaQuery: () => WeekMediaQuery(),
 };
 
 class MyApp extends StatelessWidget {
