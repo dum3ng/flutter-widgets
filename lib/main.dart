@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:widgets/absorb_pointer.dart';
 import 'package:widgets/align.dart';
+import 'package:widgets/animated_builder.dart';
 import 'package:widgets/animated_container.dart';
 import 'package:widgets/backdrop_filter.dart';
 import 'package:widgets/custom_paint.dart';
@@ -13,6 +14,7 @@ import 'package:widgets/futter_builder.dart';
 import 'package:widgets/layout_builder.dart';
 import 'package:widgets/opacity.dart';
 import 'package:widgets/page_view.dart';
+import 'package:widgets/positioned.dart';
 import 'package:widgets/safe_area.dart';
 import 'package:widgets/sliver_app_bar.dart';
 import 'package:widgets/sliver_collection.dart';
@@ -87,6 +89,10 @@ class RoutesData {
   static const BackdropFilter = '/backdrop filter';
   /// 26
   static const Align = '/align';
+  /// 27
+  static const Positioned = '/positioned';
+  /// 28
+  static const AnimatedBuilder = '/animated builder';
 }
 
 var routesMap = {
@@ -112,6 +118,8 @@ var routesMap = {
   RoutesData.Transform: () => WeekTransform(),
   RoutesData.BackdropFilter: () => WeekBackdropFilter(),
   RoutesData.Align: () => WeekAlign(),
+  RoutesData.Positioned: () => WeekPositioned(),
+  RoutesData.AnimatedBuilder: () => WeekAnimatedBuilder(),
 };
 
 class MyApp extends StatelessWidget {
