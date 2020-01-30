@@ -17,6 +17,7 @@ import 'package:widgets/opacity.dart';
 import 'package:widgets/page_view.dart';
 import 'package:widgets/positioned.dart';
 import 'package:widgets/safe_area.dart';
+import 'package:widgets/sized_box.dart';
 import 'package:widgets/sliver_app_bar.dart';
 import 'package:widgets/sliver_collection.dart';
 import 'package:widgets/stream_builder.dart';
@@ -96,6 +97,8 @@ class RoutesData {
   static const AnimatedBuilder = '/animated builder';
   /// 29
   static const Dismissible = '/dismissible';
+  /// 30
+  static const SizedBox = '/sized box';
 }
 
 var routesMap = {
@@ -124,6 +127,7 @@ var routesMap = {
   RoutesData.Positioned: () => WeekPositioned(),
   RoutesData.AnimatedBuilder: () => WeekAnimatedBuilder(),
   RoutesData.Dismissible: () => WeekDismissible(),
+  RoutesData.SizedBox: () => WeekSizedBox(),
 };
 
 class MyApp extends StatelessWidget {
