@@ -14,6 +14,7 @@ import 'package:widgets/fitted_box.dart';
 import 'package:widgets/flexible.dart';
 import 'package:widgets/floating_action_button.dart';
 import 'package:widgets/futter_builder.dart';
+import 'package:widgets/inherited_widget.dart';
 import 'package:widgets/layout_builder.dart';
 import 'package:widgets/media_query.dart';
 import 'package:widgets/opacity.dart';
@@ -127,6 +128,8 @@ class RoutesData {
   static const MediaQuery = '/media query';
   /// 36
   static const Spacer = '/spacer';
+  /// 37
+  static const InheritedWidget = '/inherited widget';
 }
 
 var routesMap = {
@@ -162,6 +165,7 @@ var routesMap = {
   RoutesData.Flexible: () => WeekFlexible(),
   RoutesData.MediaQuery: () => WeekMediaQuery(),
   RoutesData.Spacer: () => WeekSpacer(),
+  RoutesData.InheritedWidget: () => WeekInheritedWidget(),
 };
 
 class MyApp extends StatelessWidget {
