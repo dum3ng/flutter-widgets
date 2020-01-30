@@ -18,6 +18,7 @@ import 'package:widgets/floating_action_button.dart';
 import 'package:widgets/futter_builder.dart';
 import 'package:widgets/inherited_widget.dart';
 import 'package:widgets/layout_builder.dart';
+import 'package:widgets/limited_box.dart';
 import 'package:widgets/media_query.dart';
 import 'package:widgets/opacity.dart';
 import 'package:widgets/page_view.dart';
@@ -143,6 +144,8 @@ class RoutesData {
 
   /// 39
   static const AspectRatio = '/aspect ratio';
+  /// 40
+  static const LimitedBox = '/limited box';
 }
 
 var routesMap = {
@@ -181,6 +184,7 @@ var routesMap = {
   RoutesData.InheritedWidget: () => WeekInheritedWidget(),
   RoutesData.AnimatedIcon: () => WeekAnimatedIcon(),
   RoutesData.AspectRatio: () => WeekAspectRatio(),
+  RoutesData.LimitedBox: () => WeekLimitedBox(),
 };
 
 class MyApp extends StatelessWidget {
