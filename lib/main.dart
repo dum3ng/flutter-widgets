@@ -5,6 +5,7 @@ import 'package:widgets/animated_builder.dart';
 import 'package:widgets/animated_container.dart';
 import 'package:widgets/backdrop_filter.dart';
 import 'package:widgets/custom_paint.dart';
+import 'package:widgets/dismissible.dart';
 import 'package:widgets/expanded.dart';
 import 'package:widgets/fade_in_image.dart';
 import 'package:widgets/fade_transition.dart';
@@ -93,6 +94,8 @@ class RoutesData {
   static const Positioned = '/positioned';
   /// 28
   static const AnimatedBuilder = '/animated builder';
+  /// 29
+  static const Dismissible = '/dismissible';
 }
 
 var routesMap = {
@@ -120,6 +123,7 @@ var routesMap = {
   RoutesData.Align: () => WeekAlign(),
   RoutesData.Positioned: () => WeekPositioned(),
   RoutesData.AnimatedBuilder: () => WeekAnimatedBuilder(),
+  RoutesData.Dismissible: () => WeekDismissible(),
 };
 
 class MyApp extends StatelessWidget {
