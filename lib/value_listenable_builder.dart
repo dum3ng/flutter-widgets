@@ -3,6 +3,9 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:widgets/common_container.dart';
 
+/// Seems like the `ValueListenable`  is very much like
+/// `EventEmitter` in node.js.
+
 class WeekValueListenableBuilder extends StatefulWidget {
   @override
   _WeekValueListenableBuilderState createState() =>

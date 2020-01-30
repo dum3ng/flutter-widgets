@@ -6,6 +6,7 @@ import 'package:widgets/animated_container.dart';
 import 'package:widgets/backdrop_filter.dart';
 import 'package:widgets/custom_paint.dart';
 import 'package:widgets/dismissible.dart';
+import 'package:widgets/draggable.dart';
 import 'package:widgets/expanded.dart';
 import 'package:widgets/fade_in_image.dart';
 import 'package:widgets/fade_transition.dart';
@@ -26,6 +27,8 @@ import 'package:widgets/tooltip.dart';
 import 'package:widgets/transform.dart';
 import 'package:widgets/value_listenable_builder.dart';
 import 'package:widgets/wrap.dart';
+
+import 'animated_list.dart';
 
 void main() => runApp(MyApp());
 
@@ -110,6 +113,11 @@ class RoutesData {
 
   /// 31
   static const ValueListenableBuilder = '/value listenable builder';
+
+  /// 32
+  static const Draggable = '/draggable';
+  /// 33
+  static const AnimatedList = '/animated list';
 }
 
 var routesMap = {
@@ -140,6 +148,8 @@ var routesMap = {
   RoutesData.Dismissible: () => WeekDismissible(),
   RoutesData.SizedBox: () => WeekSizedBox(),
   RoutesData.ValueListenableBuilder: () => WeekValueListenableBuilder(),
+  RoutesData.Draggable: () => WeekDraggable(),
+  RoutesData.AnimatedList: () => WeekAnimatedList(),
 };
 
 class MyApp extends StatelessWidget {
