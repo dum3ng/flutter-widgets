@@ -4,6 +4,7 @@ import 'package:widgets/align.dart';
 import 'package:widgets/animated_builder.dart';
 import 'package:widgets/animated_container.dart';
 import 'package:widgets/animated_icon.dart';
+import 'package:widgets/aspect_ratio.dart';
 import 'package:widgets/backdrop_filter.dart';
 import 'package:widgets/custom_paint.dart';
 import 'package:widgets/dismissible.dart';
@@ -121,19 +122,27 @@ class RoutesData {
 
   /// 32
   static const Draggable = '/draggable';
+
   /// 33
   static const AnimatedList = '/animated list';
+
   /// 34
   static const Flexible = '/flexible';
+
   /// 35
   static const MediaQuery = '/media query';
+
   /// 36
   static const Spacer = '/spacer';
+
   /// 37
   static const InheritedWidget = '/inherited widget';
 
   /// 38
   static const AnimatedIcon = '/animated icon';
+
+  /// 39
+  static const AspectRatio = '/aspect ratio';
 }
 
 var routesMap = {
@@ -171,6 +180,7 @@ var routesMap = {
   RoutesData.Spacer: () => WeekSpacer(),
   RoutesData.InheritedWidget: () => WeekInheritedWidget(),
   RoutesData.AnimatedIcon: () => WeekAnimatedIcon(),
+  RoutesData.AspectRatio: () => WeekAspectRatio(),
 };
 
 class MyApp extends StatelessWidget {
