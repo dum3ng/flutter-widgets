@@ -3,6 +3,7 @@ import 'package:widgets/absorb_pointer.dart';
 import 'package:widgets/align.dart';
 import 'package:widgets/animated_builder.dart';
 import 'package:widgets/animated_container.dart';
+import 'package:widgets/animated_icon.dart';
 import 'package:widgets/backdrop_filter.dart';
 import 'package:widgets/custom_paint.dart';
 import 'package:widgets/dismissible.dart';
@@ -130,6 +131,9 @@ class RoutesData {
   static const Spacer = '/spacer';
   /// 37
   static const InheritedWidget = '/inherited widget';
+
+  /// 38
+  static const AnimatedIcon = '/animated icon';
 }
 
 var routesMap = {
@@ -166,6 +170,7 @@ var routesMap = {
   RoutesData.MediaQuery: () => WeekMediaQuery(),
   RoutesData.Spacer: () => WeekSpacer(),
   RoutesData.InheritedWidget: () => WeekInheritedWidget(),
+  RoutesData.AnimatedIcon: () => WeekAnimatedIcon(),
 };
 
 class MyApp extends StatelessWidget {
