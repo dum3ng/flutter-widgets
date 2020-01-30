@@ -11,6 +11,7 @@ import 'package:widgets/expanded.dart';
 import 'package:widgets/fade_in_image.dart';
 import 'package:widgets/fade_transition.dart';
 import 'package:widgets/fitted_box.dart';
+import 'package:widgets/flexible.dart';
 import 'package:widgets/floating_action_button.dart';
 import 'package:widgets/futter_builder.dart';
 import 'package:widgets/layout_builder.dart';
@@ -118,6 +119,8 @@ class RoutesData {
   static const Draggable = '/draggable';
   /// 33
   static const AnimatedList = '/animated list';
+  /// 34
+  static const Flexible = '/flexible';
 }
 
 var routesMap = {
@@ -150,6 +153,7 @@ var routesMap = {
   RoutesData.ValueListenableBuilder: () => WeekValueListenableBuilder(),
   RoutesData.Draggable: () => WeekDraggable(),
   RoutesData.AnimatedList: () => WeekAnimatedList(),
+  RoutesData.Flexible: () => WeekFlexible(),
 };
 
 class MyApp extends StatelessWidget {
