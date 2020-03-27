@@ -234,8 +234,15 @@ class WidgetsDemoPage extends StatelessWidget {
 class PlayPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return ListView.builder(
+      itemCount: level1Routes.length,
+      itemBuilder: (context, index) {
+        var route = level1Routes.entries.elementAt(index);
+        return FlatButton(child: Text(route.key),
+        onPressed: () {
+          Navigator.of(context).pushNamed(route.key);
+        },);
+      },
     );
   }
 }
