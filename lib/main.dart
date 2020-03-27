@@ -1,41 +1,42 @@
 import 'package:flutter/material.dart';
-import 'package:widgets/absorb_pointer.dart';
-import 'package:widgets/align.dart';
-import 'package:widgets/animated_builder.dart';
-import 'package:widgets/animated_container.dart';
-import 'package:widgets/animated_icon.dart';
-import 'package:widgets/aspect_ratio.dart';
-import 'package:widgets/backdrop_filter.dart';
-import 'package:widgets/custom_paint.dart';
-import 'package:widgets/dismissible.dart';
-import 'package:widgets/draggable.dart';
-import 'package:widgets/expanded.dart';
-import 'package:widgets/fade_in_image.dart';
-import 'package:widgets/fade_transition.dart';
-import 'package:widgets/fitted_box.dart';
-import 'package:widgets/flexible.dart';
-import 'package:widgets/floating_action_button.dart';
-import 'package:widgets/futter_builder.dart';
-import 'package:widgets/inherited_widget.dart';
-import 'package:widgets/layout_builder.dart';
-import 'package:widgets/limited_box.dart';
-import 'package:widgets/media_query.dart';
-import 'package:widgets/opacity.dart';
-import 'package:widgets/page_view.dart';
-import 'package:widgets/positioned.dart';
-import 'package:widgets/safe_area.dart';
-import 'package:widgets/sized_box.dart';
-import 'package:widgets/sliver_app_bar.dart';
-import 'package:widgets/sliver_collection.dart';
-import 'package:widgets/spacer.dart';
-import 'package:widgets/stream_builder.dart';
-import 'package:widgets/table.dart';
-import 'package:widgets/tooltip.dart';
-import 'package:widgets/transform.dart';
-import 'package:widgets/value_listenable_builder.dart';
-import 'package:widgets/wrap.dart';
+import 'package:widgets/play/paint.dart';
+import 'package:widgets/widgets_demo/absorb_pointer.dart';
+import 'package:widgets/widgets_demo/align.dart';
+import 'package:widgets/widgets_demo/animated_builder.dart';
+import 'package:widgets/widgets_demo/animated_container.dart';
+import 'package:widgets/widgets_demo/animated_icon.dart';
+import 'package:widgets/widgets_demo/animated_list.dart';
+import 'package:widgets/widgets_demo/aspect_ratio.dart';
+import 'package:widgets/widgets_demo/backdrop_filter.dart';
+import 'package:widgets/widgets_demo/custom_paint.dart';
+import 'package:widgets/widgets_demo/dismissible.dart';
+import 'package:widgets/widgets_demo/draggable.dart';
+import 'package:widgets/widgets_demo/expanded.dart';
+import 'package:widgets/widgets_demo/fade_in_image.dart';
+import 'package:widgets/widgets_demo/fade_transition.dart';
+import 'package:widgets/widgets_demo/fitted_box.dart';
+import 'package:widgets/widgets_demo/flexible.dart';
+import 'package:widgets/widgets_demo/floating_action_button.dart';
+import 'package:widgets/widgets_demo/futter_builder.dart';
+import 'package:widgets/widgets_demo/inherited_widget.dart';
+import 'package:widgets/widgets_demo/layout_builder.dart';
+import 'package:widgets/widgets_demo/limited_box.dart';
+import 'package:widgets/widgets_demo/media_query.dart';
+import 'package:widgets/widgets_demo/opacity.dart';
+import 'package:widgets/widgets_demo/page_view.dart';
+import 'package:widgets/widgets_demo/positioned.dart';
+import 'package:widgets/widgets_demo/safe_area.dart';
+import 'package:widgets/widgets_demo/sized_box.dart';
+import 'package:widgets/widgets_demo/sliver_app_bar.dart';
+import 'package:widgets/widgets_demo/sliver_collection.dart';
+import 'package:widgets/widgets_demo/spacer.dart';
+import 'package:widgets/widgets_demo/stream_builder.dart';
+import 'package:widgets/widgets_demo/table.dart';
+import 'package:widgets/widgets_demo/tooltip.dart';
+import 'package:widgets/widgets_demo/transform.dart';
+import 'package:widgets/widgets_demo/value_listenable_builder.dart';
+import 'package:widgets/widgets_demo/wrap.dart';
 
-import 'animated_list.dart';
 
 void main() => runApp(MyApp());
 
@@ -187,6 +188,58 @@ var routesMap = {
   RoutesData.LimitedBox: () => WeekLimitedBox(),
 };
 
+Map<String, Widget Function() > playRoutesMap = {
+  'play/paint': () => PaintDemo(),
+};
+
+var level1Routes = {
+  'widgets': ()=> WidgetsDemoPage(),
+  'play': () => PlayPage(),
+};
+
+
+class WidgetsDemoPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // This method is rerun every time setState is called, for instance as done
+    // by the _incrementCounter method above.
+    //
+    // The Flutter framework has been optimized to make rerunning build methods
+    // fast, so that you can just rebuild anything that needs updating rather
+    // than having to individually change instances of widgets.
+    return Scaffold(body: weeklyGrid());
+      }
+
+  Widget weeklyGrid() {
+    return Scaffold(
+        body: GridView.builder(
+            itemCount: routesMap.length,
+            gridDelegate:
+                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+            itemBuilder: (context, index) {
+              var key = routesMap.keys.toList().reversed.toList()[index];
+              var value = routesMap[key];
+              return ListTile(
+                  title: Text(key),
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return value();
+                    }));
+                  });
+            }));
+  }
+}
+
+class PlayPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      
+    );
+  }
+}
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -229,18 +282,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -250,19 +291,34 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    var routes = routesMap.map((key, value) {
-      return MapEntry(key, (context) => value());
-    });
+    // var allMap = Map
+    // var routes = routesMap.map((key, value) {
+    //   return MapEntry(key, (context) => value());
+    // });
+    var allRoutesList = [routesMap, playRoutesMap].map( (rs) => rs.map( (key, value) => MapEntry(key, (context)=> value())));
+    var allRoutes = allRoutesList.reduce((a,b) => a..addAll(b));
     return MaterialApp(
       theme: ThemeData(
           primaryColor: Colors.black,
           fontFamily: "Quicksand",
           primarySwatch: Colors.amber),
-      routes: routes,
+      routes: allRoutes,
 //      {
 //        RoutesData.SafeArea: (context) => WeekSafeArea(),
 //      },
-      home: weeklyGrid(),
+      home: ListView(children: <Widget>[
+        Padding(padding: EdgeInsets.all(20.0),
+        child: FlatButton(child: Text('widgets'),
+        onPressed: () {
+          Navigator.of(context).pushNamed('widgets');
+        },),),
+
+        Padding(padding: EdgeInsets.all(20.0),
+        child: FlatButton(child: Text('play'),
+        onPressed: () {
+          Navigator.of(context).pushNamed('play');
+        },),),
+      ],),
     );
   }
 
@@ -284,23 +340,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget weeklyGrid() {
-    return Scaffold(
-        body: GridView.builder(
-            itemCount: routesMap.length,
-            gridDelegate:
-                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
-            itemBuilder: (context, index) {
-              var key = routesMap.keys.toList().reversed.toList()[index];
-              var value = routesMap[key];
-              return ListTile(
-                  title: Text(key),
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return value();
-                    }));
-                  });
-            }));
-  }
 }
