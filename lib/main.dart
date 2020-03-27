@@ -251,21 +251,40 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    //   return MapEntry(key, (context) => value());
+ // This method is rerun every time setState is called, for instance as done // by the _incrementCounter method above.
+       //
+    // The Flutter framework has been optimized to make rerunning build methods
+    // fast, so that you can just rebuild anything that needs updating rather
+    // than having to individually change instances of widgets.
+    // var allMap = Map
+    // var routes = routesMap.map((key, value) {
+    //   return MapEntry(key, (context) => value());
+    // });
+    var allRoutesList = [routesMap, playRoutesMap].map( (rs) => rs.map( (key, value) => MapEntry(key, (context)=> value())));
+    var allRoutes = allRoutesList.reduce((a,b) => a..addAll(b));
     return MaterialApp(
-      title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+          primaryColor: Colors.black,
+          fontFamily: "Quicksand",
+          primarySwatch: Colors.amber),
+      routes: allRoutes,
+//      {
+//        RoutesData.SafeArea: (context) => WeekSafeArea(),
+//      },
+      home: ListView(children: <Widget>[
+        Padding(padding: EdgeInsets.all(20.0),
+        child: FlatButton(child: Text('widgets'),
+        onPressed: () {
+          Navigator.of(context).pushNamed('widgets');
+        },),),
+
+        Padding(padding: EdgeInsets.all(20.0),
+        child: FlatButton(child: Text('play'),
+        onPressed: () {
+          Navigator.of(context).pushNamed('play');
+        },),),
+      ],),
     );
   }
 }
@@ -291,10 +310,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   @override
-  Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
+  Widget build(BuildContext context) { // This method is rerun every time setState is called, for instance as done // by the _incrementCounter method above.
+       //
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
