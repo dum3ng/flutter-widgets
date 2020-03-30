@@ -234,16 +234,16 @@ class WidgetsDemoPage extends StatelessWidget {
 class PlayPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: level1Routes.length,
+    return Scaffold(body: ListView.builder(
+      itemCount: playRoutesMap.length,
       itemBuilder: (context, index) {
-        var route = level1Routes.entries.elementAt(index);
+        var route = playRoutesMap.entries.elementAt(index);
         return FlatButton(child: Text(route.key),
         onPressed: () {
           Navigator.of(context).pushNamed(route.key);
         },);
       },
-    );
+    ));
   }
 }
 
@@ -261,7 +261,7 @@ class MyApp extends StatelessWidget {
     // var routes = routesMap.map((key, value) {
     //   return MapEntry(key, (context) => value());
     // });
-    var allRoutesList = [routesMap, playRoutesMap].map( (rs) => rs.map( (key, value) => MapEntry(key, (context)=> value())));
+    var allRoutesList = [routesMap, playRoutesMap, level1Routes].map( (rs) => rs.map( (key, value) => MapEntry(key, (context)=> value())));
     var allRoutes = allRoutesList.reduce((a,b) => a..addAll(b));
     return MaterialApp(
       theme: ThemeData(
@@ -272,96 +272,29 @@ class MyApp extends StatelessWidget {
 //      {
 //        RoutesData.SafeArea: (context) => WeekSafeArea(),
 //      },
-      home: ListView(children: <Widget>[
-        Padding(padding: EdgeInsets.all(20.0),
-        child: FlatButton(child: Text('widgets'),
-        onPressed: () {
-          Navigator.of(context).pushNamed('widgets');
-        },),),
-
-        Padding(padding: EdgeInsets.all(20.0),
-        child: FlatButton(child: Text('play'),
-        onPressed: () {
-          Navigator.of(context).pushNamed('play');
-        },),),
-      ],),
+      home: MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
+class MyHomePage extends StatelessWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  @override
-  Widget build(BuildContext context) { // This method is rerun every time setState is called, for instance as done // by the _incrementCounter method above.
-       //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    // var allMap = Map
-    // var routes = routesMap.map((key, value) {
-    //   return MapEntry(key, (context) => value());
-    // });
-    var allRoutesList = [routesMap, playRoutesMap].map( (rs) => rs.map( (key, value) => MapEntry(key, (context)=> value())));
-    var allRoutes = allRoutesList.reduce((a,b) => a..addAll(b));
-    return MaterialApp(
-      theme: ThemeData(
-          primaryColor: Colors.black,
-          fontFamily: "Quicksand",
-          primarySwatch: Colors.amber),
-      routes: allRoutes,
-//      {
-//        RoutesData.SafeArea: (context) => WeekSafeArea(),
-//      },
-      home: ListView(children: <Widget>[
-        Padding(padding: EdgeInsets.all(20.0),
-        child: FlatButton(child: Text('widgets'),
-        onPressed: () {
-          Navigator.of(context).pushNamed('widgets');
-        },),),
-
-        Padding(padding: EdgeInsets.all(20.0),
-        child: FlatButton(child: Text('play'),
-        onPressed: () {
-          Navigator.of(context).pushNamed('play');
-        },),),
-      ],),
-    );
-  }
-
-  Widget weeklyList(BuildContext context) {
+  Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(
-          itemCount: routesMap.length,
-          itemBuilder: (context, index) {
-            var key = routesMap.keys.toList().reversed.toList()[index];
-            var value = routesMap[key];
-            return ListTile(
-                title: Text(key),
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return value();
-                  }));
-                });
-          }),
+        body:
+      ListView(children: <Widget>[
+        Padding(padding: EdgeInsets.all(20.0),
+        child: FlatButton(child: Text('widgets'),
+        onPressed: () {
+          Navigator.of(context).pushNamed('widgets');
+        },),),
+
+        Padding(padding: EdgeInsets.all(20.0),
+        child: FlatButton(child: Text('play'),
+        onPressed: () {
+          Navigator.of(context).pushNamed('play');
+        },),),
+      ],),
     );
   }
-
 }
