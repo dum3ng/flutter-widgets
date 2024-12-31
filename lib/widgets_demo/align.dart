@@ -7,13 +7,11 @@ class WeekAlign extends StatefulWidget {
 }
 
 class _WeekAlignState extends State<WeekAlign> {
-  Alignment alignment;
+  Alignment alignment = Alignment.topCenter;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    alignment = Alignment.topCenter;
   }
 
   @override
@@ -70,7 +68,7 @@ class _WeekAlignState extends State<WeekAlign> {
                       value: align,
                       groupValue: alignment,
                       onChanged: (a) => this.setState(() {
-                        alignment = a;
+                        if (a != null) alignment = a;
                       }),
                     )
                   ],

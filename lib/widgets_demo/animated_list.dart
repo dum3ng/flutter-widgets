@@ -11,7 +11,7 @@ class WeekAnimatedList extends StatefulWidget {
 }
 
 class _WeekAnimatedListState extends State<WeekAnimatedList> {
-  Animatable<Offset> _tween;
+  late Animatable<Offset> _tween;
   final _listKey = GlobalKey<AnimatedListState>();
   List<String> items = ['abc'];
 
@@ -43,11 +43,11 @@ class _WeekAnimatedListState extends State<WeekAnimatedList> {
             ),
           ),
           Center(
-            child: RaisedButton(
+            child: ElevatedButton(
               child: Text('add'),
               onPressed: () {
                 items.add(randomName());
-                _listKey.currentState.insertItem(items.length - 1);
+                _listKey.currentState!.insertItem(items.length - 1);
 //                this.setState(() {
 //                  items.add(randomName());
 //                });

@@ -22,6 +22,7 @@ class WeekTooltip extends StatelessWidget {
                 icon: Icon(Icons.android),
                 color: Colors.green,
                 tooltip: 'My father is Google',
+                onPressed: () {},
               ),
             )
           ],

@@ -23,10 +23,12 @@ class _WeekSafeAreaState<WeekSafeArea> extends State {
     // TODO: implement build
     var body;
     if (mode == 'safe')
-      body= withSafeArea();
+      body = withSafeArea();
     else
       body = withoutSafeArea();
-    return CommonContainer(child: body,);
+    return CommonContainer(
+      child: body,
+    );
   }
 
   Widget withSafeArea() {
@@ -59,10 +61,9 @@ class _WeekSafeAreaState<WeekSafeArea> extends State {
     var to = 'safe';
     if (this.mode == 'safe') to = 'unsafe';
 
-    return FlatButton(
+    return FilledButton(
       child: Text('set to $to'),
-      hoverColor: Colors.green,
-      color: Colors.lightBlue,
+      style: ButtonStyle(overlayColor: WidgetStateProperty.all(Colors.green)),
       onPressed: () {
         this.setMode(to);
       },

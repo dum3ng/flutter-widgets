@@ -37,7 +37,6 @@ import 'package:widgets/widgets_demo/transform.dart';
 import 'package:widgets/widgets_demo/value_listenable_builder.dart';
 import 'package:widgets/widgets_demo/wrap.dart';
 
-
 void main() => runApp(MyApp());
 
 class RoutesData {
@@ -145,6 +144,7 @@ class RoutesData {
 
   /// 39
   static const AspectRatio = '/aspect ratio';
+
   /// 40
   static const LimitedBox = '/limited box';
 }
@@ -188,15 +188,14 @@ var routesMap = {
   RoutesData.LimitedBox: () => WeekLimitedBox(),
 };
 
-Map<String, Widget Function() > playRoutesMap = {
+Map<String, Widget Function()> playRoutesMap = {
   'play/paint': () => PaintDemo(),
 };
 
 var level1Routes = {
-  'widgets': ()=> WidgetsDemoPage(),
+  'widgets': () => WidgetsDemoPage(),
   'play': () => PlayPage(),
 };
-
 
 class WidgetsDemoPage extends StatelessWidget {
   @override
@@ -208,7 +207,7 @@ class WidgetsDemoPage extends StatelessWidget {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(body: weeklyGrid());
-      }
+  }
 
   Widget weeklyGrid() {
     return Scaffold(
@@ -224,7 +223,7 @@ class WidgetsDemoPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return value();
+                      return value!();
                     }));
                   });
             }));
@@ -234,14 +233,17 @@ class WidgetsDemoPage extends StatelessWidget {
 class PlayPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: ListView.builder(
+    return Scaffold(
+        body: ListView.builder(
       itemCount: playRoutesMap.length,
       itemBuilder: (context, index) {
         var route = playRoutesMap.entries.elementAt(index);
-        return FlatButton(child: Text(route.key),
-        onPressed: () {
-          Navigator.of(context).pushNamed(route.key);
-        },);
+        return FilledButton(
+          child: Text(route.key),
+          onPressed: () {
+            Navigator.of(context).pushNamed(route.key);
+          },
+        );
       },
     ));
   }
@@ -252,8 +254,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //   return MapEntry(key, (context) => value());
- // This method is rerun every time setState is called, for instance as done // by the _incrementCounter method above.
-       //
+    // This method is rerun every time setState is called, for instance as done // by the _incrementCounter method above.
+    //
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
@@ -261,8 +263,12 @@ class MyApp extends StatelessWidget {
     // var routes = routesMap.map((key, value) {
     //   return MapEntry(key, (context) => value());
     // });
-    var allRoutesList = [routesMap, playRoutesMap, level1Routes].map( (rs) => rs.map( (key, value) => MapEntry(key, (context)=> value())));
-    var allRoutes = allRoutesList.reduce((a,b) => a..addAll(b));
+    var allRoutesList = [
+      routesMap,
+      playRoutesMap,
+      level1Routes
+    ].map((rs) => rs.map((key, value) => MapEntry(key, (context) => value())));
+    var allRoutes = allRoutesList.reduce((a, b) => a..addAll(b));
     return MaterialApp(
       theme: ThemeData(
           primaryColor: Colors.black,
@@ -281,20 +287,28 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body:
-      ListView(children: <Widget>[
-        Padding(padding: EdgeInsets.all(20.0),
-        child: FlatButton(child: Text('widgets'),
-        onPressed: () {
-          Navigator.of(context).pushNamed('widgets');
-        },),),
-
-        Padding(padding: EdgeInsets.all(20.0),
-        child: FlatButton(child: Text('play'),
-        onPressed: () {
-          Navigator.of(context).pushNamed('play');
-        },),),
-      ],),
+      body: ListView(
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.all(20.0),
+            child: FilledButton(
+              child: Text('widgets'),
+              onPressed: () {
+                Navigator.of(context).pushNamed('widgets');
+              },
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(20.0),
+            child: FilledButton(
+              child: Text('play'),
+              onPressed: () {
+                Navigator.of(context).pushNamed('play');
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

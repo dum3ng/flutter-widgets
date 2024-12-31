@@ -9,8 +9,8 @@ class WeekTransform extends StatefulWidget {
 
 class _WeekTransformState extends State<WeekTransform>
     with TickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<double> _animation;
+  late AnimationController _controller;
+  late Animation<double> _animation;
   double _angle = 0.0;
   int day = 1;
   double _oldValue = 0.0;
@@ -62,7 +62,9 @@ class _WeekTransformState extends State<WeekTransform>
   Widget calendarDay(int day) {
     double rotate = this.day > day
         ? deg2rad(180)
-        : this.day < day ? deg2rad(0) : deg2rad(_angle);
+        : this.day < day
+            ? deg2rad(0)
+            : deg2rad(_angle);
     return Center(
         child: Transform(
       transform: Matrix4.rotationX(rotate),

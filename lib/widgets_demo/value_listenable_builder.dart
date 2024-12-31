@@ -14,7 +14,7 @@ class WeekValueListenableBuilder extends StatefulWidget {
 
 class _WeekValueListenableBuilderState
     extends State<WeekValueListenableBuilder> {
-  ValueNotifier _cast;
+  late ValueNotifier _cast;
 
   @override
   void initState() {
@@ -35,8 +35,8 @@ class _WeekValueListenableBuilderState
                 children: <Widget>[
                   bigText('text'),
                   bigText('value: $value'),
-                  bigText('double: ${value*2}'),
-                  RaisedButton(
+                  bigText('double: ${value * 2}'),
+                  ElevatedButton(
                     child: Text('change value'),
                     onPressed: () {
                       _cast.value = math.Random().nextInt(100);

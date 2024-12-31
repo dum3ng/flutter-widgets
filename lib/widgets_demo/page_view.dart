@@ -7,7 +7,7 @@ class WeekPageView extends StatefulWidget {
 }
 
 class _WeekPageViewState extends State<WeekPageView> {
-  PageController _controller;
+  late PageController _controller;
 
   @override
   void initState() {
@@ -38,7 +38,7 @@ class _WeekPageViewState extends State<WeekPageView> {
     );
   }
 
-  Widget createPage({String title, Color color}) {
+  Widget createPage({required String title, required Color color}) {
     return Container(
       child: Column(
         children: <Widget>[
@@ -52,7 +52,7 @@ class _WeekPageViewState extends State<WeekPageView> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                RaisedButton(
+                ElevatedButton(
                   child: Text('prev'),
                   onPressed: () {
                     _controller.previousPage(
@@ -60,7 +60,7 @@ class _WeekPageViewState extends State<WeekPageView> {
                         curve: Curves.easeIn);
                   },
                 ),
-                RaisedButton(
+                ElevatedButton(
                   child: Text('next'),
                   onPressed: () {
                     _controller.nextPage(

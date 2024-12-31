@@ -6,7 +6,9 @@ class LabeledWidget extends StatelessWidget {
   final EdgeInsets padding;
 
   LabeledWidget(
-      {this.child, this.label, this.padding = const EdgeInsets.all(20.0)});
+      {required this.child,
+      required this.label,
+      this.padding = const EdgeInsets.all(20.0)});
 
   @override
   Widget build(BuildContext context) {

@@ -8,8 +8,8 @@ class WeekFittedBox extends StatefulWidget {
 }
 
 class _WeekFittedBoxState extends State<WeekFittedBox> {
-  BoxFit fitMode;
-  Map<String, BoxFit> modes;
+  late BoxFit fitMode;
+  late Map<String, BoxFit> modes;
 
   @override
   void initState() {
@@ -30,7 +30,7 @@ class _WeekFittedBoxState extends State<WeekFittedBox> {
             child: Column(children: [
               LabeledWidget(label: 'original image', child: imageWidget()),
               LabeledWidget(
-                padding: EdgeInsets.all(0.0),
+                  padding: EdgeInsets.all(0.0),
                   label: 'fit',
                   child: Container(
                       width: 350.0,
@@ -43,7 +43,10 @@ class _WeekFittedBoxState extends State<WeekFittedBox> {
               Padding(
                   padding: EdgeInsets.all(20.0),
                   child: PopupMenuButton(
-                    child: RaisedButton(child: Text('choose BoxFit'),),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text('choose BoxFit'),
+                    ),
                     itemBuilder: (context) {
                       return BoxFit.values
                           .map((x) => PopupMenuItem(
@@ -59,7 +62,8 @@ class _WeekFittedBoxState extends State<WeekFittedBox> {
             ])));
   }
 
-  Widget createBlock({double width, double height, Color color}) {
+  Widget createBlock(
+      {required double width, required double height, required Color color}) {
     return Container(
       width: width,
       height: height,

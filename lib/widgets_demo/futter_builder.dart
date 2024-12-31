@@ -23,7 +23,7 @@ class WeekFutureBuilder extends StatelessWidget {
           var footer;
           print(snapshot.connectionState);
           if (snapshot.connectionState != ConnectionState.done) {
-            footer =  CircularProgressIndicator();
+            footer = CircularProgressIndicator();
           }
           return Container(
             height: MediaQuery.of(ctx).size.height,
@@ -41,7 +41,7 @@ class WeekFutureBuilder extends StatelessWidget {
 class NewWidget extends StatelessWidget {
   var data;
 
-  NewWidget({Key key, this.data}) : super(key: key);
+  NewWidget({super.key, this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -55,11 +55,11 @@ class NewWidget extends StatelessWidget {
                   child: Column(
             children: <Widget>[
               Text(
-                item['name'],
+                item['name']!,
                 style: TextStyle(fontSize: 32.0, fontWeight: FontWeight.bold),
               ),
               Text(
-                item['biography'],
+                item['biography']!,
                 style: TextStyle(fontSize: 16.0, color: Colors.grey),
               )
             ],

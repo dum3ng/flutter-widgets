@@ -9,10 +9,12 @@ class WeekSliverAppBar extends StatelessWidget {
         slivers: <Widget>[
           SliverAppBar(
               leading: IconButton(
-                  icon: Icon(
-                Icons.android,
-                color: Colors.red,
-              )),
+                icon: Icon(
+                  Icons.android,
+                  color: Colors.red,
+                ),
+                onPressed: () {},
+              ),
               title: Text('sliver app bar, hi!'),
               expandedHeight: 200.0,
               flexibleSpace: FlexibleSpaceBar(

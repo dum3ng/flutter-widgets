@@ -8,9 +8,9 @@ class WeekFadeTransition extends StatefulWidget {
 
 class _WeekFadeTransitionState extends State<WeekFadeTransition>
     with TickerProviderStateMixin {
-  AnimationController _animationController;
+  late AnimationController _animationController;
 
-  Animation _animation;
+  late Animation<double> _animation;
 
   @override
   void initState() {
@@ -47,7 +47,7 @@ class _WeekFadeTransitionState extends State<WeekFadeTransition>
               height: 100.0,
             ),
             Center(
-              child: RaisedButton(
+              child: ElevatedButton(
                 child: Padding(
                   child: Column(
                     children: [Icon(Icons.flash_on), Text('animate')],

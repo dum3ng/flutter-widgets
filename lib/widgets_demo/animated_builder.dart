@@ -9,7 +9,7 @@ class WeekAnimatedBuilder extends StatefulWidget {
 
 class _WeekAnimatedBuilderState extends State<WeekAnimatedBuilder>
     with TickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {
@@ -34,7 +34,9 @@ class _WeekAnimatedBuilderState extends State<WeekAnimatedBuilder>
       child: Center(
         child: AnimatedBuilder(
           animation: _controller,
-          child: FlutterLogo(size: 100.0,),
+          child: FlutterLogo(
+            size: 100.0,
+          ),
           builder: (context, child) {
             return Transform.rotate(
               angle: _controller.value * 2 * math.pi,

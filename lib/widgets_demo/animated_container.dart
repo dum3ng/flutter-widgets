@@ -123,7 +123,7 @@ class _WeekAnimatedContainerState extends State<WeekAnimatedContainer> {
               ),
             )
           ]),
-          RaisedButton(
+          ElevatedButton(
             child: Text('change'),
             onPressed: () {
               animate();

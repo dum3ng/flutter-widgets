@@ -19,11 +19,11 @@ class AnimatingCircle extends StatefulWidget {
 
 class _AnimatingCircleState extends State<AnimatingCircle>
     with TickerProviderStateMixin {
-  double radius;
-  AnimationController _controller;
-  Animation<double> _animation;
-  AnimationStatus _oldStatus;
-  Color _color;
+  double radius = 0.0;
+  late AnimationController _controller;
+  late Animation<double> _animation;
+  late AnimationStatus _oldStatus;
+  late Color _color;
 
   @override
   void initState() {
@@ -41,7 +41,7 @@ class _AnimatingCircleState extends State<AnimatingCircle>
     _color = Colors.blue;
 
     _animation.addListener(() {
-      if(_animation.status != _oldStatus) {
+      if (_animation.status != _oldStatus) {
         _oldStatus = _animation.status;
         this.setState(() {
           _color = getRandomColor();
@@ -73,7 +73,7 @@ class MyPainter extends CustomPainter {
   double radius = 0.0;
   Color color;
 
-  MyPainter({this.radius, this.color});
+  MyPainter({required this.radius, required this.color});
 
   @override
   void paint(Canvas canvas, Size size) {

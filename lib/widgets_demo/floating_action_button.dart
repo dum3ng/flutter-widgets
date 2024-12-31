@@ -18,6 +18,7 @@ class WeekFloatingActionButton extends StatelessWidget {
                 BoxDecoration(borderRadius: BorderRadius.circular(100.0)),
             child: Padding(
               child: FloatingActionButton(
+                onPressed: () {},
                 isExtended: true,
                 elevation: 12.0,
                 backgroundColor: Colors.indigoAccent,

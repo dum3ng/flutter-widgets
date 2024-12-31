@@ -21,6 +21,7 @@ class _WeekDismissibleState extends State<WeekDismissible> {
                 width: 100.0,
                 color: Colors.red,
                 child: IconButton(
+                  onPressed: () => {},
                   icon: Icon(Icons.delete),
                 ),
               ),

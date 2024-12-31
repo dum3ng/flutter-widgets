@@ -38,10 +38,10 @@ class _WeekDraggableState extends State<WeekDraggable> {
                         .toList(),
                   ));
             },
-            onWillAccept: (data) => data < 10,
+            onWillAccept: (data) => data != null && (data as double) < 10,
             onAccept: (data) {
               this.setState(() {
-                old.add(data);
+                old.add(data as int);
                 current.remove(data);
               });
             },

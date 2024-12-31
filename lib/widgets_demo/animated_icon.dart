@@ -18,7 +18,7 @@ class _WeekAnimatedIconState extends State<WeekAnimatedIcon>
     'pause_play': AnimatedIcons.pause_play,
   };
 
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {

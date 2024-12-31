@@ -23,12 +23,12 @@ class WeekAbsorbPointer extends StatelessWidget {
               content: Text('hello'),
             ),
           ),
-          RaisedButton(
+          ElevatedButton(
             child: Text('disabled with null onpress'),
             onPressed: null,
           ),
           AbsorbPointer(
-            child: RaisedButton(
+            child: ElevatedButton(
               child: Text('with absorb pointer'),
               onPressed: () {
                 showDialog(context);
@@ -45,14 +45,14 @@ class ShowDialog extends StatelessWidget {
   SnackBar snack;
   Widget child;
 
-  ShowDialog({this.snack, this.child});
+  ShowDialog({required this.snack, required this.child});
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return ElevatedButton(
       child: child,
       onPressed: () {
-        Scaffold.of(context).showSnackBar(snack);
+        ScaffoldMessenger.of(context).showSnackBar(snack);
       },
     );
   }

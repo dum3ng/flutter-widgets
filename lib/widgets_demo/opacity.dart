@@ -65,7 +65,7 @@ class _WeekOpacityState<WeekOpacity> extends State {
             )));
   }
 
-  Widget labeledWidget(Widget widget, {String label}) {
+  Widget labeledWidget(Widget widget, {required String label}) {
     return Center(
         child: Column(
       children: <Widget>[

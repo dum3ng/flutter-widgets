@@ -54,10 +54,13 @@ class MyThemeData extends InheritedWidget {
   final Color color;
   final double fontSize;
 
-  MyThemeData({this.color, this.fontSize, Widget child}) : super(child: child);
+  MyThemeData(
+      {required this.color, required this.fontSize, required Widget child})
+      : super(child: child);
 
-  static MyThemeData of(BuildContext context) =>
-      context.dependOnInheritedWidgetOfExactType<MyThemeData>();
+  static MyThemeData of(BuildContext context) {
+    return context.dependOnInheritedWidgetOfExactType<MyThemeData>()!;
+  }
 
   @override
   bool updateShouldNotify(InheritedWidget oldWidget) {

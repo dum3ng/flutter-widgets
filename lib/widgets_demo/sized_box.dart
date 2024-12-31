@@ -11,12 +11,14 @@ class WeekSizedBox extends StatelessWidget {
         child: SizedBox.expand(
           child: Column(
             children: <Widget>[
-              RaisedButton(
+              ElevatedButton(
+                onPressed: () {},
                 child: Text('normal button'),
               ),
               SizedBox(
                 width: double.infinity,
-                child: RaisedButton(
+                child: ElevatedButton(
+                  onPressed: () {},
                   child: Text('block button'),
                 ),
               )

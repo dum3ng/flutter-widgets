@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 class CommonContainer extends StatelessWidget {
   final child;
   final title;
-  final GlobalKey key;
 
-  CommonContainer({this.key, this.child, this.title});
+  CommonContainer({super.key, this.child, this.title});
 
   @override
   Widget build(BuildContext context) {
