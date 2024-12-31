@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widgets/my_provider/provider.dart';
 import 'package:widgets/play/paint.dart';
 import 'package:widgets/widgets_demo/absorb_pointer.dart';
 import 'package:widgets/widgets_demo/align.dart';
@@ -147,6 +148,8 @@ class RoutesData {
 
   /// 40
   static const LimitedBox = '/limited box';
+
+  static const Provider = '/provider';
 }
 
 var routesMap = {
@@ -169,8 +172,6 @@ var routesMap = {
   RoutesData.FittedBox: () => WeekFittedBox(),
   RoutesData.LayoutBuilder: () => WeekLayoutBuilder(),
   RoutesData.AbsorbPointer: () => WeekAbsorbPointer(),
-  RoutesData.Transform: () => WeekTransform(),
-  RoutesData.BackdropFilter: () => WeekBackdropFilter(),
   RoutesData.Align: () => WeekAlign(),
   RoutesData.Positioned: () => WeekPositioned(),
   RoutesData.AnimatedBuilder: () => WeekAnimatedBuilder(),
@@ -186,6 +187,7 @@ var routesMap = {
   RoutesData.AnimatedIcon: () => WeekAnimatedIcon(),
   RoutesData.AspectRatio: () => WeekAspectRatio(),
   RoutesData.LimitedBox: () => WeekLimitedBox(),
+  RoutesData.Provider: () => ProviderDemo(),
 };
 
 Map<String, Widget Function()> playRoutesMap = {
